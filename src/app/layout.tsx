@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import useAnalytics from "@/hooks/useAnalytics";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -23,6 +24,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  useAnalytics("YOUR_TRACKING_ID");
+
   return (
     <html lang="en">
       <body
